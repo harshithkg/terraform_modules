@@ -59,7 +59,7 @@ pipeline {
                     echo "Fixing permissions for SSH key..."
                     sh '''
                     sudo chmod 400 /mnt/terraform/uswest.pem
-                    sudo chown jenkins:jenkins /mnt/terraform/terraform/uswest.pem
+                    sudo chown jenkins:jenkins /mnt/terraform/uswest.pem
                     '''
 
                     echo "Waiting 30 seconds for the instance to be ready..."

@@ -84,7 +84,7 @@ pipeline {
         stage('Approval Before Destroy') {
             steps {
                 script {
-                    def publicIp = sh(script: "cd /mnt/terraform && terraform output -json | jq -r '.app_instance_public_ip.value'", returnStdout: true).trim()
+                    def publicIp = sh(script: "cd /mnt/terraform && terraform output -json | jq -r '.instance_public_ip.value'", returnStdout: true).trim()
                     input message: "Visit the instance: http://${publicIp}\n\nHave you checked the website? Do you want to destroy the instance?",
                           parameters: []
                 }

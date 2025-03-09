@@ -47,7 +47,7 @@ pipeline {
         stage('Get Public IP & Update Ansible') {
             steps {
                 script {
-                    def publicIp = sh(script: "cd /mnt/terraform && terraform output -json | jq -r '.app_instance_public_ip.value'", returnStdout: true).trim()
+                    def publicIp = sh(script: "cd /mnt/terraform && terraform output -json | jq -r '.instance_public_ip.value'", returnStdout: true).trim()
                     echo "Public IP: ${publicIp}"
 
                     // Update Ansible hosts file

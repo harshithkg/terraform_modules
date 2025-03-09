@@ -75,7 +75,7 @@ pipeline {
                 script {
                     sh '''
                     export ANSIBLE_HOST_KEY_CHECKING=False
-                    ansible-playbook -i /mnt/terraform/ansible/hosts --private-key /mnt/terraform/uswest.pem -u ubuntu /mnt/terraform/terraform/ansible/httpd.yml
+                    ansible-playbook -i /mnt/terraform/ansible/hosts --private-key /mnt/terraform/uswest.pem -u ubuntu /mnt/terraform/ansible/httpd.yml
                     '''
                 }
             }
